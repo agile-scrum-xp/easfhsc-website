@@ -17,7 +17,7 @@
         notAuthenticated : 'auth-not-authenticated',
         notAuthorized : 'auth-not-authorized'
     });
-
+/**/
     angular.module('fhscModule').constant('USER_ROLES', {
         all : '*',
         investigator : 'INVESTIGATOR',

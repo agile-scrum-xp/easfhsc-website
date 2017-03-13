@@ -9,9 +9,15 @@
 
                 <div style="margin-top: 25px" class="input-group">
 
-                    <select class="form-control" ng-model="credentials.title" required>
+                    <select class="form-control" ng-model="credentials.title" name="title" required>
+                        <option value="" disabled selected>Select Title</option>
                         <option ng-repeat="title in titles">{{title}}</option>
                     </select>
+                </div>
+                <div class="error"
+                     ng-show="(submitted  || registerForm.title.$dirty)  && registerForm.title.$invalid">
+                    <p class="error" ng-show="registerForm.title.$error.required">'Title'
+                        is mandatory</p>
                 </div>
 
                 <div style="margin-top: 25px" class="input-group"
@@ -55,17 +61,16 @@
                         is mandatory</p>
                 </div>
 
-                <div style="margin-top: 25px" class="input-group" ng-class="{'has-error': registerForm.email.$invalid}">
+                <div style="margin-top: 25px" class="input-group" ng-class="{'has-error': registerForm.emailConfirmation.$invalid}">
 					<span class="input-group-addon"><i
                             class="glyphicon glyphicon-envelope"></i></span> <input type="text"
-                                                                                    class="form-control" name="email"
-                                                                                    ng-model="credentials.email"
-                                                                                    placeholder="Email" required/>
+                                                                                    class="form-control" name="emailConfirmation"
+                                                                                    ng-model="credentials.emailConfirmation"
+                                                                                    placeholder="Email confirmation" required data-password-verify="credentials.email"/>
                 </div>
                 <div class="error"
-                     ng-show="(submitted  || registerForm.email.$dirty)  && registerForm.email.$invalid">
-                    <p class="error" ng-show="registerForm.email.$error.required">'Email'
-                        is mandatory</p>
+                     ng-show="(submitted  || registerForm.emailConfirmation.$dirty)  && registerForm.emailConfirmation.$invalid">
+                    <p class="error" ng-show="registerForm.emailConfirmation.$error.passwordVerify || registerForm.emailConfirmation.$error.required">'Email' should match</p>
                 </div>
             </form>
         </div>

@@ -47,8 +47,8 @@
 
         $scope.credentials = {};
 
-        $scope.titles = ['Select Title', 'Prof.', 'Dr.', 'Mr.', 'Miss', 'Mrs.', 'Ms.'];
-        $scope.credentials.title = $scope.titles[0];
+        $scope.titles = ['Prof.', 'Dr.', 'Mr.', 'Miss', 'Mrs.', 'Ms.'];
+        //$scope.credentials.title = $scope.titles[0];
 
         $scope.close = function() {
             console.log(" ****************************  Register  Close Button Pressed");
@@ -57,6 +57,8 @@
 
         $scope.submit = function() {
             console.log(" ****************************  Register  Submit Button Pressed");
+            delete $scope.credentials.emailConfirmation;
+
             var result = registerSvc.registerCall($scope.credentials, function(result) {
                 // success function
                 console.log("The result in the calling controler: " + result);

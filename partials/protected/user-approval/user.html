@@ -2,30 +2,60 @@
      class="mainbox col-md-12">
     <div class="panel panel-info">
         <div class="panel-heading">
-            <div class="panel-title">User Details {{user.firstName}}</div>
+            <div class="panel-title">User Details</div>
         </div>
         <div style="padding-top: 30px" class="panel-body">
-            <h2>Basic Table {{user.firstName}}</h2>
-            <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>
             <table class="table">
                 <tbody>
+
                 <tr>
-                    <th>Firstname</th>
-                    <td>John</td>
+                    <th>User ID</th>
+                    <td>{{user.userId}}</td>
+                </tr>
+                <tr>
+                    <th>Title</th>
+                    <td>{{user.title}}</td>
+                </tr>
+                <tr>
+                    <th>First Name</th>
+                    <td>{{user.firstName}}</td>
                 </tr>
 
-
                 <tr>
-                    <th>Lastname</th>
-                    <td>Doe</td>
+                    <th>Last Name</th>
+                    <td>{{user.lastName}}</td>
                 </tr>
                 <tr>
                     <th>Email</th>
-                    <td>mary@example.com</td>
+                    <td>{{user.email}}</td>
                 </tr>
                 <tr>
-                    <th>July</th>
-                    <td>Dooley</td>
+                    <th>Profession</th>
+                    <td>{{user.profession}}</td>
+                </tr>
+                <tr>
+                    <th>Specialty</th>
+                    <td>{{user.speciality}}</td>
+                </tr>
+                <tr>
+                    <th>Department</th>
+                    <td>{{user.department}}</td>
+                </tr>
+                <tr>
+                    <th>Institution</th>
+                    <td>{{user.institution}}</td>
+                </tr>
+                <tr>
+                    <th>Country</th>
+                    <td>{{user.country}}</td>
+                </tr>
+                <tr>
+                    <th>Status</th>
+                    <td>{{user.status}}</td>
+                </tr>
+                <tr>
+                    <th>Category</th>
+                    <td>{{user.category}}</td>
                 </tr>
                 </tbody>
             </table>

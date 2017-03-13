@@ -94,7 +94,7 @@
                     //$scope.data = orderedData.slice(0, 3);
 
                     $scope.data = $scope.data.slice((params.page() - 1) * params.count(), params.page() * params.count());
-
+1
                     // Finally we rertun the orderedData NOT: original data or filtered data
                     return $scope.data;
                 }, function (response) {

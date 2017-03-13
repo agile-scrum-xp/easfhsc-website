@@ -8,6 +8,6 @@
      */
     angular.module('fhscModule', ['ui.router', 'ui.bootstrap', 'angular-jwt', "ngStorage", 'ngResource',
         'multiStepForm', "ngTable", 'cephas.loginModule', 'cephas.logoutModule', 'cephas.registerModule', 'cephas.fileListModule', 'cephas.fileUploadModule',
-        'cephas.userListModule', 'cephas.userApprovalModule']);
+        'cephas.userListModule', 'cephas.userApprovalModule','cephas.fileDetailsModule']);
 
 })();

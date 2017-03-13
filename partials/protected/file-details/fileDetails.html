@@ -1,0 +1,46 @@
+<div id="loginbox" style="margin-top: 10px;"
+     class="mainbox col-md-12">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div class="panel-title">File Details {{file.name}}</div>
+        </div>
+        <div style="padding-top: 30px" class="panel-body">
+            <table class="table">
+                <tbody>
+                <tr>
+                    <th>File id</th>
+                    <td>{{fileDetails.fileId}}</td>
+                </tr>
+                <tr>
+                    <th>Name</th>
+                    <td>{{fileDetails.fileName}}</td>
+                </tr>
+                <tr>
+                    <th>Location</th>
+                    <td>{{fileDetails.location}}</td>
+                </tr>
+                <tr>
+                    <th>Size</th>
+                    <td>{{fileDetails.fileSize/1000}}kb</td>
+                </tr>
+                <tr>
+                    <th>Type</th>
+                    <td>{{fileDetails.fileType}}</td>
+                </tr>
+                <tr>
+                    <th>Upload date</th>
+                    <td>{{fileDetails.uploadDate}}</td>
+                </tr>
+                <tr>
+                    <th>Comment</th>
+                    <td>{{fileDetails.comment}}</td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="col-sm-12 controls">
+                <input type="button" id="btn-close" class="btn btn-danger"
+                       value="Close" data-ng-click="close();"/>
+            </div>
+        </div>
+    </div>
+</div>

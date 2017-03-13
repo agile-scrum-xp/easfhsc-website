@@ -317,3 +317,29 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: rgba(255, 255, 255, 0.2);
 }
+
+
+/**
+Setting modal color as on main website
+
+.modal-dialog .modal-content{
+  color:black;
+  border-color: grey;
+}
+.modal-dialog .modal-content .panel-info{
+  color:black;
+  background-color: lightgray;
+  border-color: grey;
+}
+.modal-dialog .modal-content .panel-info .panel-heading{
+  color:black;
+  background-color: lightgray;
+  border-color: grey;
+}
+.modal-dialog .modal-content  .panel-info .panel-body{
+  color:black;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: grey;
+}
+**/
+

@@ -43,6 +43,10 @@
 
                 <td title="'Country'" filter="{ 'userId.country': 'text'}"
                     sortable="'userId.country'">{{file.userId.country}}</td>
+
+                <td title="'Details'"><a  ng-click="vm.goDetails(file.fileId)">"Details"</a></td>
+
+                <td title="'Preview'"><a  ng-click="vm.goPreview(file.fileId)">"Preview"</a></td>
             </tr>
         </table>
 

@@ -5,10 +5,11 @@
 (function() {
     'use strict';
 
-    angular.module('cephas.userApprovalModule').controller('userCtrl', ['$scope', '$rootScope', '$uibModalInstance', 'user', 'userSvc', 'AUTH_EVENTS', userController]);
+    angular.module('cephas.userApprovalModule').controller('userCtrl', ['$scope', '$uibModalInstance', 'user', userController]);
 
-    function userController($scope, $rootScope, $uibModalInstance, user, userSvc, AUTH_EVENTS) {
+    function userController($scope, $uibModalInstance, user) {
 
+        $scope.user=user;
         console.log("From userCtrl: " + JSON.stringify(user));
 
         $scope.close = function() {

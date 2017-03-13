@@ -54,9 +54,10 @@
         approvedApplicantsURL : 'http://localhost:8088/fhscServices/rest/fhsc/user/approved',
 
         fileUploadURL : 'http://localhost:8088/fhscServices/rest/fhsc/fileUpload/fileupload',
-
         allUserFilesListURL: 'http://localhost:8088/fhscServices/rest/fhsc/fileList/all',
-        singleUserFilesListURL: 'http://localhost:8088/fhscServices/rest/fhsc/fileList/user'
+        singleUserFilesListURL: 'http://localhost:8088/fhscServices/rest/fhsc/fileList/user',
+        fileDetailsCoordinatorURL:'http://localhost:8088/fhscServices/rest/fhsc/fileList/details/coordinator/',
+        fileDetailsInvestigatorURL:'http://localhost:8080/fhscServices/rest/fhsc/fileList/investigator/',
     });
 
     /* Adding the auth interceptor here, to check every $http request*/

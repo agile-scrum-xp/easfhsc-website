@@ -27,5 +27,23 @@
             });
             return defer.promise;
         }
+
+        this.getFileDetails = function(getFileDetails, recordId, success, error) {
+
+            console.log("fileListSvc.getFilesList is called");
+            $http({
+                method : 'GET',
+                url : getFileDetails + recordId
+            }).then(function successCallback(response) {
+                console.log("file list retrieval success")
+                success(response);
+            }, function errorCallback(response) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+                console.log("file list retrieval error")
+                error(response);
+            });
+        }
+
     });
 })();

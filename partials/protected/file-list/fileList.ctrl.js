@@ -5,10 +5,10 @@
 (function() {
     'use strict';
 
-    angular.module('cephas.fileListModule').controller('fileListCtrl', ['$scope', '$rootScope',  '$filter',  'WEB_URLS', 'NgTableParams', 'fileListSvc','FILE_UPLOAD_EVENTS','USER_ROLES', fileListController]);
+    angular.module('cephas.fileListModule').controller('fileListCtrl', ['$scope', '$rootScope', '$uibModal', '$filter',  'WEB_URLS', 'NgTableParams', 'fileListSvc','FILE_UPLOAD_EVENTS','USER_ROLES', fileListController]);
 
 
-    function fileListController($scope, $rootScope, $filter,  WEB_URLS, NgTableParams,fileListSvc,FILE_UPLOAD_EVENTS,USER_ROLES) {
+    function fileListController($scope, $rootScope, $uibModal, $filter,  WEB_URLS, NgTableParams,fileListSvc,FILE_UPLOAD_EVENTS,USER_ROLES) {
 
             /**
              *
@@ -24,9 +24,12 @@
             $scope.fileListSvc = fileListSvc;
 
             var filesListURL=WEB_URLS.singleUserFilesListURL;
+            var filedetailsURL=WEB_URLS.fileDetailsInvestigatorURL;
 
-            if($scope.currentUser.userRole==USER_ROLES.coordinator)
-                filesListURL=WEB_URLS.allUserFilesListURL;
+            if($scope.currentUser.userRole==USER_ROLES.coordinator) {
+                filesListURL = WEB_URLS.allUserFilesListURL;
+                filedetailsURL=WEB_URLS.fileDetailsCoordinatorURL;
+            }
 
             var updateTable=function() {
                 self.tableParams = new NgTableParams({
@@ -89,6 +92,54 @@
                 });
             }
 
+        self.goDetails = function (record_id) {
+            console.log("The record id received: " + record_id);
+
+            fileListSvc.getFileDetails(filedetailsURL, record_id, function (response) {
+                    //console.log(response);
+
+                    var modalInstance = $uibModal.open({
+                        animation : $scope.animationsEnabled,
+                        templateUrl : 'partials/protected/file-details/fileDetails.html',
+                        controller : 'fileDetailsCtrl',
+                        //
+                        backdrop : 'static',
+                        resolve: {
+                            fileDetails: function () {
+                                return response.data;
+                            }
+                        }
+                    });
+                },
+                function (result) {
+
+                });
+
+        }
+
+        self.goPreview = function (record_id) {
+            console.log("The record id received: " + record_id);
+
+            fileListSvc.getFile(record_id, function (response) {
+                    //console.log(response);
+
+                    var modalInstance = $uibModal.open({
+                        animation : $scope.animationsEnabled,
+                        templateUrl : 'partials/protected/user-approval/user.html',
+                        controller : 'userCtrl',
+                        //
+                        backdrop : 'static',
+                        resolve: {
+                            user: function () {
+                                return response.data;
+                            }
+                        }
+                    });
+                },
+                function (result) {
+
+                });
+        }
 
 
         updateTable();

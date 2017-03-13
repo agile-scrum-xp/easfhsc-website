@@ -1,0 +1,50 @@
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+        <ul class="nav navbar-nav">
+            <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+            <li class="hidden">
+                <a href="#page-top"></a>
+            </li>
+            <li>
+                <a class="page-scroll" data-ng-click="showFileUploadDialog();" class="btn btn-default btn-lg">Upload file</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+    <div class="row">
+        <table ng-table="vm.tableParams" class="table table-striped"
+               show-filter="true">
+            <tr ng-repeat="file in $data track by $index"> <!--ng-click="vm.go(file.fileId)"-->
+
+                <td title="'File ID'" filter="{ fileId: 'text'}"
+                    sortable="'fileId'">{{file.fileId}}</td>
+
+                <td title="'File Location'" filter="{ location: 'text'}"
+                    sortable="'location'">{{file.location}}</td>
+
+                <td title="'File Name'" filter="{ fileName: 'text'}"
+                    sortable="'fileName'">{{file.fileName}}</td>
+
+                <td title="'Uploader First name'" filter="{ 'userId.firstName': 'text'}"
+                    sortable="'userId.firstName'">{{file.userId.firstName}}</td>
+
+                <td title="'Uploader Last name'" filter="{ 'userId.lastName': 'text'}"
+                    sortable="'userId.lastName'">{{file.userId.lastName}}</td>
+
+                <td title="'Country'" filter="{ 'userId.country': 'text'}"
+                    sortable="'userId.country'">{{file.userId.country}}</td>
+            </tr>
+        </table>
+
+    </div>
+</div>

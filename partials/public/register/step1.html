@@ -1,0 +1,73 @@
+<div id="registerbox" style="margin-top: 10px;" class="mainbox col-md-12">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div class="panel-title">Register {{$getActiveStep().title}}</div>
+        </div>
+        <div style="padding-top: 30px" class="panel-body">
+            <form name="registerForm" class="form-horizontal" method="post"
+                  ng-submit="submit()" novalidate form-autofill-fix form-step-validity>
+
+                <div style="margin-top: 25px" class="input-group">
+
+                    <select class="form-control" ng-model="credentials.title" required>
+                        <option ng-repeat="title in titles">{{title}}</option>
+                    </select>
+                </div>
+
+                <div style="margin-top: 25px" class="input-group"
+                     ng-class="{'has-error': registerForm.firstName.$invalid}">
+					<span class="input-group-addon"><i
+                            class="glyphicon glyphicon-user"></i></span> <input type="text"
+                                                                                class="form-control" name="firstName"
+                                                                                ng-model="credentials.firstName"
+                                                                                placeholder="First Name" required/>
+                </div>
+                <div class="error"
+                     ng-show="(submitted  || registerForm.firstName.$dirty)  && registerForm.firstName.$invalid">
+                    <p class="error" ng-show="registerForm.firstName.$error.required">'First Name'
+                        is mandatory</p>
+                </div>
+
+                <div style="margin-top: 25px" class="input-group"
+                     ng-class="{'has-error': registerForm.lastName.$invalid}">
+					<span class="input-group-addon"><i
+                            class="glyphicon glyphicon-user"></i></span> <input type="text"
+                                                                                class="form-control" name="lastName"
+                                                                                ng-model="credentials.lastName"
+                                                                                placeholder="Last Name" required/>
+                </div>
+                <div class="error"
+                     ng-show="(submitted  || registerForm.lastName.$dirty)  && registerForm.lastName.$invalid">
+                    <p class="error" ng-show="registerForm.lastName.$error.required">'Last Name'
+                        is mandatory</p>
+                </div>
+
+                <div style="margin-top: 25px" class="input-group" ng-class="{'has-error': registerForm.email.$invalid}">
+					<span class="input-group-addon"><i
+                            class="glyphicon glyphicon-envelope"></i></span> <input type="text"
+                                                                                    class="form-control" name="email"
+                                                                                    ng-model="credentials.email"
+                                                                                    placeholder="Email" required/>
+                </div>
+                <div class="error"
+                     ng-show="(submitted  || registerForm.email.$dirty)  && registerForm.email.$invalid">
+                    <p class="error" ng-show="registerForm.email.$error.required">'Email'
+                        is mandatory</p>
+                </div>
+
+                <div style="margin-top: 25px" class="input-group" ng-class="{'has-error': registerForm.email.$invalid}">
+					<span class="input-group-addon"><i
+                            class="glyphicon glyphicon-envelope"></i></span> <input type="text"
+                                                                                    class="form-control" name="email"
+                                                                                    ng-model="credentials.email"
+                                                                                    placeholder="Email" required/>
+                </div>
+                <div class="error"
+                     ng-show="(submitted  || registerForm.email.$dirty)  && registerForm.email.$invalid">
+                    <p class="error" ng-show="registerForm.email.$error.required">'Email'
+                        is mandatory</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

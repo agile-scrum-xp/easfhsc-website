@@ -1,0 +1,41 @@
+<!--<multi-step-container steps="steps" class="simple-prev-next">-->
+<!--<header>-->
+<!--<button ng-disabled="$isFirst()" class="btn btn-default" ng-click="$previousStep()">-->
+<!--<span class="fa fa-chevron-left"></span>-->
+<!--Previous-->
+<!--</button>-->
+<!--<strong ng-if="$getActiveStep().hasForm" class="fa" ng-class="$getActiveStep().valid ? 'fa-check' : 'fa-times'"></strong>-->
+
+<!--<button ng-disabled="$isLast() || ($getActiveStep().hasForm && !$getActiveStep().valid)" class="btn btn-default" ng-click="$nextStep()">-->
+<!--Next-->
+<!--<span class="fa fa-chevron-right"></span>-->
+<!--</button>-->
+<!--</header>-->
+
+<!--<main step-container></main>-->
+<!--</multi-step-container>-->
+
+<multi-step-container steps="steps" on-cancel="$dismiss()" on-finish="$close()">
+
+    <!--<header class="text-center">-->
+        <!--{{$getActiveStep().title}}-->
+    <!--</header>-->
+
+    <main step-container></main>
+
+    <footer class="text-center">
+        <button ng-disabled="$isFirst()" class="btn btn-default" ng-click="$previousStep()" ng-if="!$isFirst()">
+            <span class="fa fa-chevron-left"></span>
+            Previous
+        </button>
+
+        <strong>Step {{$getActiveIndex()}} / {{$getSteps().length}}</strong>
+
+        <button ng-disabled="($getActiveStep().hasForm && !$getActiveStep().valid)" class="btn btn-default"
+                ng-click="$nextStep()" ng-if="!($isLast())"> Next
+            <span class="fa fa-chevron-right"></span>
+        </button>
+
+        <button class="btn btn-success" ng-click="submit()" ng-if="$isLast()">Finish</button>
+    </footer>
+</multi-step-container>

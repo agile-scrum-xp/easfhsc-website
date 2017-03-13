@@ -1,0 +1,19 @@
+<div id="logoutbox" style="margin-top: 10px;" class="mainbox col-md-12">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div class="panel-title">Logout</div>
+        </div>
+        <p style="font-size: 1.3em; margin: 20px;">Do you want to Logout?
+        </p>
+        <div style="padding-top: 30px" class="panel-body">
+            <form name="logoutForm" class="form-horizontal" method="post"
+                  ng-submit="submit()" novalidate form-autofill-fix>
+                <div class="col-sm-12 controls">
+                    <input type="submit" id="btn-logout" class="btn btn-success"
+                           value="Logout" /> <input type="button" id="btn-close"
+                                                    class="btn btn-danger" value="Close" data-ng-click="close();" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,90 @@
+<div id="fileUploadbox" style="margin-top: 10px;"
+     class="mainbox col-md-12">
+
+    <style>
+        input[type="file"] {
+            display: none;
+        }
+    </style>
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div class="panel-title">File Upload</div>
+        </div>
+        <div style="padding-top: 30px" class="panel-body">
+            <form name="fileUploadForm" class="form-horizontal" method="post"
+                  ng-submit="submit()" novalidate form-autofill-fix>
+
+
+                <div style="margin-top: 25px" class="input-group">
+                    <label class="btn btn-default">
+                        <input type="file" class="btn btn-default" name="fileContent"  custom-on-change="updateFile"/>
+                        CHOOSE File
+                    </label>
+                    <span ng-if="!file.content" style="color:red;margin-left:5px;">Please choose a file</span>
+                    <span ng-if="file.content" style="color:green; margin-left:5px">One file chosen: ({{file.content.size/1000}}kb)</span>
+                </div>
+                <div class="error"
+                     ng-show="(submitted  || fileUploadForm.fileContent.$dirty)  && fileUploadForm.fileContent.$invalid">
+                    <p class="error" ng-show="fileUploadForm.fileContent.$error.required">'File'
+                        is mandatory</p>
+                </div>
+
+
+                <div style="margin-top: 25px" class="input-group">
+					<span class="input-group-addon"><i
+                            class="glyphicon glyphicon-pencil"></i></span> <input type="text"
+                                                                                class="form-control" name="fileName"
+                                                                                ng-model="file.name" placeholder="filename"
+                                                                                required />
+                </div>
+                <div class="error"
+                     ng-show="(submitted  || fileUploadForm.fileName.$dirty)  && fileUploadForm.fileName.$invalid">
+                    <p class="error" ng-show="fileUploadForm.fileName.$error.required">'File Name'
+                        is mandatory</p>
+                </div>
+
+
+                <div style="margin-top: 25px" class="input-group">
+					<span class="input-group-addon"><i
+                            class="glyphicon glyphicon-file"></i></span>
+                    <select class="form-control" name="fileType" ng-options="file for file in fileTypes" ng-model="file.type" required></select>
+                </div>
+                <div class="error"
+                     ng-show="(submitted  || fileUploadForm.fileType.$dirty)  && fileUploadForm.fileType.$invalid">
+                    <p class="error" ng-show="fileUploadForm.fileType.$error.required">'File type'
+                        is mandatory</p>
+                </div>
+
+                <div style="margin-top: 25px" class="input-group">
+					<span class="input-group-addon"><i
+                            class="glyphicon glyphicon-pencil"></i></span>
+                    <input type="text"
+                           class="form-control" name="comment"
+                           ng-model="file.comment" placeholder="Comment"
+                           required />
+                </div>
+                <div class="error"
+                     ng-show="(submitted  || fileUploadForm.comment.$dirty)  && fileUploadForm.comment.$invalid">
+                    <p class="error" ng-show="fileUploadForm.comment.$error.required">'Comment'
+                        is mandatory</p>
+                </div>
+
+
+                <div style="margin-top: 10px" class="form-group">
+                    <!-- Button -->
+
+                    <div class="col-sm-12 controls">
+                        <input ng-disabled="(!fileUploadForm.$valid)"
+                               type="submit" id="btn-login" class="btn btn-success"
+                               value="Upload" />
+                        <input type="button" id="btn-close" class="btn btn-danger"
+                               value="Close" data-ng-click="close();"/>
+                    </div>
+
+                </div>
+                <p ng-show="error" class="error">{{errorMessage}}</p>
+
+            </form>
+        </div>
+    </div>
+</div>

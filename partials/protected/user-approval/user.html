@@ -1,0 +1,38 @@
+<div id="loginbox" style="margin-top: 10px;"
+     class="mainbox col-md-12">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div class="panel-title">User Details {{user.firstName}}</div>
+        </div>
+        <div style="padding-top: 30px" class="panel-body">
+            <h2>Basic Table {{user.firstName}}</h2>
+            <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>
+            <table class="table">
+                <tbody>
+                <tr>
+                    <th>Firstname</th>
+                    <td>John</td>
+                </tr>
+
+
+                <tr>
+                    <th>Lastname</th>
+                    <td>Doe</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>mary@example.com</td>
+                </tr>
+                <tr>
+                    <th>July</th>
+                    <td>Dooley</td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="col-sm-12 controls">
+                <input type="button" id="btn-close" class="btn btn-danger"
+                       value="Close" data-ng-click="close();"/>
+            </div>
+        </div>
+    </div>
+</div>

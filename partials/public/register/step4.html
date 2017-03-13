@@ -1,0 +1,53 @@
+<div id="registerbox" style="margin-top: 10px;" class="mainbox col-md-12">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div class="panel-title">Register {{$getActiveStep().title}}</div>
+        </div>
+        <div style="padding-top: 30px" class="panel-body">
+
+
+            <form name="registerForm" class="form-horizontal" method="post"
+                  ng-submit="submit()" novalidate form-autofill-fix form-step-validity>
+
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <th>Title</th><td>{{credentials.title}}</td>
+                    </tr>
+                    <tr>
+                        <th>First name</th><td>{{credentials.firstName}}</td>
+                    </tr>
+                    <tr>
+                        <th>Last name</th><td>{{credentials.lastName}}</td>
+                    </tr>
+                    <tr>
+                        <th>Email</th><td>{{credentials.email}}</td>
+                    </tr>
+                    <tr>
+                        <th>Profession</th><td>{{credentials.profession}}</td>
+                    </tr>
+                    <tr>
+                        <th>Speciality</th><td>{{credentials.speciality}}</td>
+                    </tr>
+                    <tr>
+                        <th>Department</th><td>{{credentials.department}}</td>
+                    </tr>
+                    <tr>
+                        <th>Institution</th><td>{{credentials.institution}}</td>
+                    </tr>
+                    <tr>
+                        <th>City</th><td>{{credentials.city}}</td>
+                    </tr>
+                    <tr>
+                        <th>Country</th><td>{{credentials.country}}</td>
+                    </tr>
+                    <tr>
+                        <th>Comment</th><td>{{credentials.comment}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </form>
+
+        </div>
+    </div>
+</div>

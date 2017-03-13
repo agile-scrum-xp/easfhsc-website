@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="fhscModule">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>EAS FHSC</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- Theme CSS -->
+    <link href="css/grayscale.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" ng-controller="fhscAppCtrl">
+
+<!-- Our Header Goes Here -->
+<div ng-include='"template/header.html"'></div>
+
+<!-- Our Website Content Goes Here -->
+<div class="container" ng-cloak>
+    <div ng-if="isLogged">
+        <b>Welcome, {{ currentUser.user }}</b>
+    </div>
+    <div ui-view></div>
+</div>
+
+<div ng-include='"template/footer.html"'></div>
+
+
+    <!-- Application Dependencies -->
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular.js"></script>
+    <script type="text/javascript"
+            src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular-animate.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular-resource.js"></script>
+    <script type="text/javascript"
+            src="https://cdn.rawgit.com/angular-ui/ui-router/0.2.18/release/angular-ui-router.js"></script>
+    <script type="text/javascript"
+            src="https://cdn.rawgit.com/auth0/angular-jwt/master/dist/angular-jwt.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.5.0/angular-local-storage.js"></script>
+    <script type="text/javascript"
+            src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript"
+            src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript"
+            src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.3.js"></script>
+
+    <script type="text/javascript"
+        src="./app/bower_components/angular-multi-step-form/dist/browser/angular-multi-step-form.js"></script>
+
+    <link rel="stylesheet"
+        href="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.css">
+
+    <script type="text/javascript"
+        src="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.js"></script>
+    <!-- jQuery
+    <script src="vendor/jquery/jquery.js"></script>
+-->
+    <!-- Bootstrap Core JavaScript
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+ -->
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbiKo39bh9DvxUEU_NSwLEYevN3llGWF8"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/grayscale.min.js"></script>
+
+    <script type="text/javascript" src="partials/public/login/login.js"></script>
+    <script type="text/javascript" src="partials/public/login/login.svc.js"></script>
+    <script type="text/javascript" src="partials/public/login/login.ctrl.js"></script>
+
+    <script type="text/javascript" src="partials/public/logout/logout.js"></script>
+    <script type="text/javascript" src="partials/public/logout/logout.svc.js"></script>
+    <script type="text/javascript" src="partials/public/logout/logout.ctrl.js"></script>
+
+    <script type="text/javascript" src="partials/public/register/register.js"></script>
+    <script type="text/javascript" src="partials/public/register/register.svc.js"></script>
+    <script type="text/javascript" src="partials/public/register/register.ctrl.js"></script>
+
+    <script type="text/javascript" src="partials/protected/file-list/fileList.js"></script>
+    <script type="text/javascript" src="partials/protected/file-list/fileList.svc.js"></script>
+    <script type="text/javascript" src="partials/protected/file-list/fileList.ctrl.js"></script>
+
+    <script type="text/javascript" src="partials/protected/user-list/userList.js"></script>
+    <script type="text/javascript" src="partials/protected/user-list/userList.svc.js"></script>
+    <script type="text/javascript" src="partials/protected/user-list/userList.ctrl.js"></script>
+
+    <script type="text/javascript" src="partials/protected/user-approval/user.js"></script>
+    <script type="text/javascript" src="partials/protected/user-approval/user.svc.js"></script>
+    <script type="text/javascript" src="partials/protected/user-approval/user.ctrl.js"></script>
+
+
+    <script type="text/javascript" src="partials/protected/file-upload/fileUpload.js"></script>
+    <script type="text/javascript" src="partials/protected/file-upload/fileUpload.svc.js"></script>
+    <script type="text/javascript" src="partials/protected/file-upload/fileUpload.ctrl.js"></script>
+
+    <script type="text/javascript" src="js/app/app.js"></script>
+    <script type="text/javascript" src="js/app/app.run.js"></script>
+    <script type="text/javascript" src="js/app/auth.incptr.js"></script>
+    <script type="text/javascript" src="js/app/auth.svc.js"></script>
+    <script type="text/javascript" src="js/app/app.const.js"></script>
+    <script type="text/javascript" src="js/app/app.ctrl.js"></script>
+    <script type="text/javascript" src="js/app/routing.js"></script>
+    <script type="text/javascript" src="js/app/session.svc.js"></script>
+
+</body>
+
+</html>

@@ -17,7 +17,7 @@
         notAuthenticated : 'auth-not-authenticated',
         notAuthorized : 'auth-not-authorized'
     });
-/**/
+
     angular.module('fhscModule').constant('USER_ROLES', {
         all : '*',
         investigator : 'INVESTIGATOR',
@@ -44,7 +44,7 @@
      * 52.76.25.3
      */
     angular.module('fhscModule').constant('WEB_URLS', {
-        loginURL : 'http://localhost:8088/fhscServices/rest/fhsc/login',
+        loginURL : 'http://localhost:8080/fhscServices/rest/fhsc/login',
         registrationURL : 'http://localhost:8088/fhscServices/rest/fhsc/user/register',
 
         singleApplicantURL : 'http://localhost:8088/fhscServices/rest/fhsc/user/',

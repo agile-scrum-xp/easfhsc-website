@@ -20,28 +20,28 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href ui-sref="welcome({scrollTo: 'intro'})">Home</a>
+                        <a class="page-scroll" href ui-sref="welcome({scrollTo: 'intro'})" data-target="#intro">Home</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href ui-sref="welcome({scrollTo: 'about'})">About</a>
+                        <a class="page-scroll" href ui-sref="welcome({scrollTo: 'about'})" data-target="#about">About</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href ui-sref="welcome({scrollTo: 'contact'})">Contact</a>
+                        <a class="page-scroll" href ui-sref="welcome({scrollTo: 'contact'})" data-target="#contact">Contact</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href ui-sref="welcome({scrollTo: 'login'})" ng-if="!currentUser">Login</a>
+                        <a class="page-scroll" href ui-sref="welcome({scrollTo: 'login'})" data-target="#login" ng-if="!currentUser">Login</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href ui-sref="welcome({scrollTo: 'login'})" ng-if="!currentUser">Register</a>
+                        <a class="page-scroll" href ui-sref="welcome({scrollTo: 'register'})" data-target="#register" ng-if="!currentUser">Register</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href ui-sref="welcome({scrollTo: 'login'})" ng-if="currentUser">Logout</a>
+                        <a class="page-scroll" href ui-sref="welcome({scrollTo: 'logout'})" data-target="#logout" ng-if="currentUser">Logout</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href ui-sref="fileListing" ng-if="currentUser">File Listing</a>
+                        <a class="page-scroll" href ui-sref="fileListing" data-target="#" ng-if="currentUser">File Listing</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href ui-sref="userListing" ng-if="currentUser">User Listing</a>
+                        <a class="page-scroll" href ui-sref="userListing" data-target="#" ng-if="currentUser">User Listing</a>
                     </li>
 
                 </ul>

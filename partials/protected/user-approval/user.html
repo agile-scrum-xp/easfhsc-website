@@ -1,4 +1,4 @@
-<div id="loginbox" style="margin-top: 10px;"
+<div id="userInfobox" style="margin-top: 10px;"
      class="mainbox col-md-12">
     <div class="panel panel-info">
         <div class="panel-heading">
@@ -8,10 +8,6 @@
             <table class="table">
                 <tbody>
 
-                <tr>
-                    <th>User ID</th>
-                    <td>{{user.userId}}</td>
-                </tr>
                 <tr>
                     <th>Title</th>
                     <td>{{user.title}}</td>
@@ -24,10 +20,6 @@
                 <tr>
                     <th>Last Name</th>
                     <td>{{user.lastName}}</td>
-                </tr>
-                <tr>
-                    <th>Email</th>
-                    <td>{{user.email}}</td>
                 </tr>
                 <tr>
                     <th>Profession</th>
@@ -50,8 +42,8 @@
                     <td>{{user.country}}</td>
                 </tr>
                 <tr>
-                    <th>Status</th>
-                    <td>{{user.status}}</td>
+                    <th>Comment</th>
+                    <td>{{user.comment}}</td>
                 </tr>
                 <tr>
                     <th>Category</th>
@@ -59,10 +51,49 @@
                 </tr>
                 </tbody>
             </table>
-            <div class="col-sm-12 controls">
+
+
+
+        <form name="approvalForm" class="form-horizontal" method="post"
+              ng-submit="submit()" novalidate form-autofill-fix>
+
+            <div style="margin-top: 25px"
+                 ng-class="{'has-error': approvalForm.adminComment.$invalid}">
+                    <input type="text" class="form-control"
+                           name="adminComment"
+                              ng-model="adminDecision.adminComment"
+                              placeholder="Admin Comment" required/>
+            </div>
+            <div class="error"
+                 ng-show="(submitted  || approvalForm.adminComment.$dirty)  && approvalForm.adminComment.$invalid">
+                <p class="error" ng-show="approvalForm.adminComment.$error.required">'Admin Comment'
+                    is mandatory</p>
+            </div>
+
+            <div style="margin-top: 25px" class="input-group">
+                <label>Approve or Reject application</label>
+
+                <select class="form-control" ng-model="adminDecision.approval" name="approval" required>
+                    <option value="" disabled selected>Approve/Disapprove</option>
+                    <option ng-repeat="action in actions">{{action}}</option>
+                </select>
+            </div>
+
+            <div class="error"
+                 ng-show="(submitted  || approvalForm.approval.$dirty)  && approvalForm.approval.$invalid">
+                <p class="error" ng-show="approvalForm.approval.$error.required">Please Approve or Reject the
+                    application</p>
+            </div>
+
+            <div class="col-sm-12 controls" style="margin-top: 25px">
+                <input type="submit" id="btn-decision" class="btn btn-success"
+                       value="Approve/Reject"/>
                 <input type="button" id="btn-close" class="btn btn-danger"
                        value="Close" data-ng-click="close();"/>
             </div>
+
+        </form>
         </div>
     </div>
+
 </div>
